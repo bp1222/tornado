@@ -1995,7 +1995,7 @@ class Application(ReversibleRouter):
         host_matcher = HostMatches(host_pattern)
         rule = Rule(host_matcher, _ApplicationRouter(self, host_handlers))
 
-        self.default_router.rules.insert(-1, rule)
+        self.default_router.rules.append(rule)
 
         if self.default_host is not None:
             self.wildcard_router.add_rules([(
